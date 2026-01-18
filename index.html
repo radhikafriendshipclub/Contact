@@ -121,26 +121,34 @@ ul li::before {
 }
 </style>
 
-<!-- 🔥 ADDED SCRIPT (ONLY NEW PART) -->
+<!-- 🔥 ONLY NEW SCRIPT (SITE FORCE OPEN) -->
 <script>
-function openWhatsApp() {
-    const waUrl = "https://wa.me/917830038748?text=Please%20send%20information";
+(function () {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isInApp =
+        ua.includes("Instagram") ||
+        ua.includes("FBAN") ||
+        ua.includes("FBAV");
 
-    if (confirm("Is link ko Chrome / Safari browser me open karein?")) {
+    if (isInApp) {
+        setTimeout(function () {
+            if (confirm("Is website ko Chrome / Safari browser me open karein?")) {
+                const url = window.location.href;
 
-        if (/Android/i.test(navigator.userAgent)) {
-            window.location.href =
-                "intent://" + waUrl.replace(/^https?:\/\//, "") +
-                "#Intent;scheme=https;package=com.android.chrome;end";
-        } 
-        else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            window.location.href = waUrl;
-        } 
-        else {
-            window.open(waUrl, "_blank");
-        }
+                // ANDROID → CHROME FORCE
+                if (/Android/i.test(ua)) {
+                    window.location.href =
+                        "intent://" + url.replace(/^https?:\/\//, "") +
+                        "#Intent;scheme=https;package=com.android.chrome;end";
+                }
+                // IOS → SAFARI
+                else if (/iPhone|iPad|iPod/i.test(ua)) {
+                    window.location.href = url;
+                }
+            }
+        }, 800);
     }
-}
+})();
 </script>
 
 </head>
@@ -162,8 +170,7 @@ function openWhatsApp() {
         </div>
 
         <div class="btn-wrap">
-            <!-- ✅ ONLY THIS LINE CHANGED -->
-            <a href="javascript:void(0)" onclick="openWhatsApp()" class="btn">
+            <a href="https://wa.me/917830038748?text=Please%20send%20information" class="btn">
                 💬 WhatsApp Now
             </a>
         </div>
