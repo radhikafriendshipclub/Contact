@@ -59,6 +59,7 @@ h2 {
     margin: 15px 0;
 }
 
+/* IMAGE WITH LIGHTING EFFECT */
 .image-box {
     width: 100%;
     display: flex;
@@ -78,6 +79,7 @@ h2 {
         0 0 70px rgba(138, 43, 226, 0.6);
 }
 
+/* WHATSAPP BUTTON CENTER */
 .btn-wrap {
     display: flex;
     justify-content: center;
@@ -97,6 +99,7 @@ h2 {
     text-decoration: none;
 }
 
+/* SECTIONS */
 .section-title {
     color: #ff4dd2;
     font-weight: bold;
@@ -120,29 +123,6 @@ ul li::before {
     font-weight: bold;
 }
 </style>
-
-<!-- 🔥 ADDED SCRIPT (ONLY NEW PART) -->
-<script>
-function openWhatsApp() {
-    const waUrl = "https://wa.me/917830038748?text=Please%20send%20information";
-
-    if (confirm("Is link ko Chrome / Safari browser me open karein?")) {
-
-        if (/Android/i.test(navigator.userAgent)) {
-            window.location.href =
-                "intent://" + waUrl.replace(/^https?:\/\//, "") +
-                "#Intent;scheme=https;package=com.android.chrome;end";
-        } 
-        else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            window.location.href = waUrl;
-        } 
-        else {
-            window.open(waUrl, "_blank");
-        }
-    }
-}
-</script>
-
 </head>
 
 <body>
@@ -150,7 +130,10 @@ function openWhatsApp() {
 <div class="container">
     <div class="card">
 
+        <!-- FRIENDSHIP LOGO ADDED -->
         <h1>🤝 FRIENDSHIP CLUB</h1>
+
+        <!-- LOGO REMOVED HERE -->
         <h2>FUN WITH ENTERTAINMENT</h2>
 
         <div class="sub">🌍 India's no1 Platform</div>
@@ -162,10 +145,7 @@ function openWhatsApp() {
         </div>
 
         <div class="btn-wrap">
-            <!-- ✅ ONLY THIS LINE CHANGED -->
-            <a href="javascript:void(0)" onclick="openWhatsApp()" class="btn">
-                💬 WhatsApp Now
-            </a>
+            <a href=https://wa.me/917830038748?text=Please%20send%20information class="btn">💬 WhatsApp Now</a>
         </div>
 
         <div class="section-title">WHO CAN APPLY</div>
