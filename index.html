@@ -6,7 +6,7 @@
 <title>Radhika Friendship Club</title>
 
 <!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,18 +15,18 @@
 body{
     margin:0;
     font-family:'Inter', sans-serif;
-    background:#f2f2f2;
+    background:#eef3f7;
 }
 
 /* CARD */
 .card{
     max-width:360px;
-    margin:60px auto;
+    margin:60px auto 110px;
     background:#ffffff;
     border-radius:18px;
     padding:28px 22px 30px;
     text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
 }
 
 /* LOGO */
@@ -35,16 +35,15 @@ body{
     height:90px;
     border-radius:50%;
     object-fit:cover;
-    border:none;
     margin-bottom:18px;
 }
 
-/* TITLE */
+/* ✅ FIXED GOLDEN + BOLD TITLE */
 h1{
-    font-size:22px;
-    font-weight:600;
-    margin:0 0 16px;
-    color:#111;
+    font-size:24px;              /* thoda bada */
+    font-weight:700;             /* bold */
+    margin:0 0 12px;
+    color:#c9a227;               /* royal gold (static) */
 }
 
 /* MAIN TEXT */
@@ -52,25 +51,41 @@ h1{
     font-size:15.5px;
     font-weight:600;
     line-height:1.6;
-    color:#222;
-    margin-bottom:16px;
+    color:#111827;
+    margin-bottom:14px;
 }
 
-/* SUB TEXT (BLACK + BOLD) */
-.sub-text{
+/* OPENING INFO */
+.opening{
     font-size:14px;
     font-weight:600;
-    color:#222;   /* ✅ black like main text */
-    margin-bottom:10px;
+    color:#dc2626;
+    margin-bottom:6px;
 }
 
-/* EXTRA TEXT */
-.extra-text{
+/* CLOSING INFO */
+.closing{
+    font-size:13.5px;
+    color:#374151;
+    margin-bottom:18px;
+}
+
+/* TRUST */
+.trust{
+    font-size:13.5px;
+    color:#374151;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+.trust span{display:block;}
+
+/* TEXTS */
+.sub-text,.extra-text{
     font-size:14px;
     font-weight:600;
-    color:#222;
-    margin-bottom:26px;
+    color:#111827;
 }
+.extra-text{margin-bottom:22px;}
 
 /* BUTTONS */
 .btn{
@@ -80,7 +95,6 @@ h1{
     gap:10px;
     text-decoration:none;
     font-size:15.5px;
-    font-weight:500;
     padding:14px;
     border-radius:30px;
     margin-bottom:14px;
@@ -88,83 +102,168 @@ h1{
 
 /* TELEGRAM */
 .telegram{
-    background:#e8f4fd;
-    color:#0088cc;
+    background:#e7f3fb;
+    color:#0369a1;
 }
 
 /* WHATSAPP */
 .whatsapp{
-    background:#25D366;
+    background:#22c55e;
     color:#fff;
-    box-shadow:0 6px 15px rgba(37,211,102,0.35);
+    box-shadow:0 6px 16px rgba(34,197,94,0.35);
 }
 
-/* CALL */
+/* CALL – BLUE */
 .call{
-    background:#f3f3f3;
-    color:#333;
+    background:#2563eb;
+    color:#ffffff;
+}
+.call i{
+    color:#e0e7ff;
 }
 
 /* FOOT */
 .footer{
     margin-top:18px;
     font-size:12px;
-    color:#aaa;
+    color:#9ca3af;
+}
+
+/* STICKY WHATSAPP */
+.sticky-whatsapp{
+    position:fixed;
+    bottom:18px;
+    right:18px;
+    background:#22c55e;
+    color:#fff;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    box-shadow:0 6px 18px rgba(34,197,94,0.45);
+    z-index:999;
+    text-decoration:none;
+}
+
+/* ===== POPUP ===== */
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+}
+.popup-box{
+    background:#fff;
+    width:90%;
+    max-width:320px;
+    border-radius:16px;
+    padding:22px 20px 24px;
+    text-align:center;
+}
+.popup-box h2{
+    font-size:18px;
+    margin:0 0 10px;
+    color:#111827;
+}
+.popup-box p{
+    font-size:14px;
+    color:#374151;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+.popup-box .ok-btn{
+    display:inline-block;
+    background:#2563eb;
+    color:#fff;
+    padding:12px 36px;
+    border-radius:25px;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
 }
 </style>
 </head>
 
 <body>
 
+<!-- POPUP -->
+<div class="popup" id="browserPopup">
+    <div class="popup-box">
+        <h2>⚡ Better Experience</h2>
+        <p>
+            For faster loading & smooth chat,<br>
+            please open this page in Chrome or Safari.
+        </p>
+        <a href="#" class="ok-btn" onclick="openExternal()">OK</a>
+    </div>
+</div>
+
 <div class="card">
 
-    <!-- LOGO -->
     <div class="logo">
         <img src="https://i.postimg.cc/rmgNyRwj/Copy-of-White-Black-Professional-Design-Football-Club-Logo-20260123-162935-0000.png" alt="Logo">
     </div>
 
-    <!-- TITLE -->
     <h1>Radhika Friendship Club</h1>
 
-    <!-- MAIN TEXT -->
     <div class="main-text">
-        Do you want to love meeting with new people and want to make new friends in your city
+        Meet real people near you and make genuine new friends in your city
     </div>
 
-    <!-- INTERESTED LINE (BLACK + BOLD) -->
-    <div class="sub-text">
-         Real  people  -  verified  real  connection 
-Join the most trusted dating community in your city
+    <div class="opening">Limited time opening</div>
+
+    <div class="closing">
+        Opening close on <strong>6:00 PM today</strong> – hurry up, don’t miss the chance
     </div>
 
-    <!-- EXTRA LINE -->
-    <div class="extra-text">
-        Contact us now through WhatsApp
+    <div class="trust">
+        <span>✔ Verified & genuine connections</span>
+        <span>✔ Safe, private & respectful environment</span>
+        <span>✔ Trusted by people in your city</span>
     </div>
 
-    <!-- TELEGRAM -->
+    <div class="sub-text">Interested people get in touch with us</div>
+    <div class="extra-text">Contact us easily</div>
+
     <a href="https://t.me/+Xv29HOt5mCBiZTk9" class="btn telegram">
-        <i class="fab fa-telegram"></i>
-        Join Telegram Channel
+        <i class="fab fa-telegram"></i> Join Telegram Channel
     </a>
 
-    <!-- WHATSAPP -->
     <a href="https://wa.me/919111826728?text=Please%20send%20information" class="btn whatsapp">
-        <i class="fab fa-whatsapp"></i>
-        Chat On WhatsApp
+        <i class="fab fa-whatsapp"></i> Chat On WhatsApp
     </a>
 
-    <!-- CALL -->
     <a href="tel:9111826728" class="btn call">
-        <i class="fas fa-phone"></i>
-        Call Now
+        <i class="fas fa-phone"></i> Call Now
     </a>
 
-    <div class="footer">
-        Radhika Friendship Club
-    </div>
-
+    <div class="footer">Radhika Friendship Club</div>
 </div>
+
+<a href="https://wa.me/919111826728?text=Please%20send%20information" class="sticky-whatsapp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+function isInstagram(){
+    return navigator.userAgent.toLowerCase().includes("instagram");
+}
+
+if(isInstagram() && !localStorage.getItem("popupShown")){
+    document.getElementById("browserPopup").style.display="flex";
+    localStorage.setItem("popupShown","yes");
+}
+
+function openExternal(){
+    window.location.href = window.location.href;
+}
+</script>
 
 </body>
 </html>
