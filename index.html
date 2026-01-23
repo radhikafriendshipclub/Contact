@@ -3,217 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Friendship Club</title>
+<title>Radhika Friendship Club</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 body{
-  background:#000;
-  color:#fff;
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:#f2f2f2;
 }
 
-.container{
-  max-width:480px;
-  margin:auto;
-  padding:20px;
-  text-align:center;
+/* CARD */
+.card{
+    max-width:360px;
+    margin:60px auto;
+    background:#ffffff;
+    border-radius:18px;
+    padding:28px 22px 30px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* 🌟 GOLDEN HEADER */
+/* LOGO */
+.logo img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:none;
+    margin-bottom:18px;
+}
+
+/* TITLE */
 h1{
-  font-size:34px;
-  margin-bottom:35px;
-  background: linear-gradient(45deg, #f9d976, #f39f00, #fff2b2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
-  letter-spacing:1px;
+    font-size:22px;
+    font-weight:600;
+    margin:0 0 16px;
+    color:#111;
 }
 
-/* SUB HEADING */
-h2{
-  font-size:22px;
-  line-height:1.5;
-  margin-bottom:35px;
+/* MAIN TEXT */
+.main-text{
+    font-size:15.5px;
+    font-weight:600;
+    line-height:1.6;
+    color:#222;
+    margin-bottom:16px;
 }
 
-.highlight{
-  color:#ffd700;
-  border-bottom:2px solid #ffd700;
-  padding-bottom:2px;
+/* SUB TEXT (BLACK + BOLD) */
+.sub-text{
+    font-size:14px;
+    font-weight:600;
+    color:#222;   /* ✅ black like main text */
+    margin-bottom:10px;
 }
 
-/* LIST */
-ul{
-  list-style:none;
-  text-align:left;
-  margin-top:20px;
+/* EXTRA TEXT */
+.extra-text{
+    font-size:14px;
+    font-weight:600;
+    color:#222;
+    margin-bottom:26px;
 }
 
-ul li{
-  font-size:16px;
-  margin-bottom:12px;
+/* BUTTONS */
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-decoration:none;
+    font-size:15.5px;
+    font-weight:500;
+    padding:14px;
+    border-radius:30px;
+    margin-bottom:14px;
 }
 
-/* 💚 ATTRACTIVE WHATSAPP BUTTON */
-.whatsapp-btn{
-  display:block;
-  width:100%;
-  background: linear-gradient(135deg, #00c853, #00e676);
-  color:#fff;
-  text-decoration:none;
-  padding:20px 0;
-  margin:35px 0;
-  font-size:22px;
-  font-weight:bold;
-  border-radius:8px;
-  box-shadow: 0 0 20px rgba(0, 255, 120, 0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* TELEGRAM */
+.telegram{
+    background:#e8f4fd;
+    color:#0088cc;
 }
 
-.whatsapp-btn:hover{
-  transform: scale(1.04);
-  box-shadow: 0 0 30px rgba(0, 255, 120, 0.9);
+/* WHATSAPP */
+.whatsapp{
+    background:#25D366;
+    color:#fff;
+    box-shadow:0 6px 15px rgba(37,211,102,0.35);
 }
 
-/* IMAGE SECTION */
-.image-section{
-  width:100%;
-  aspect-ratio:1/1;
-  overflow:hidden;
+/* CALL */
+.call{
+    background:#f3f3f3;
+    color:#333;
 }
 
-.image-section img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:6px;
-}
-
-/* ===== FULL SCREEN FORCE POPUP ===== */
-#forcePopup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  z-index:999999;
-  display:none;
-  justify-content:center;
-  align-items:center;
-}
-
-#forcePopup .box{
-  background:#fff;
-  color:#000;
-  padding:25px;
-  border-radius:18px;
-  max-width:330px;
-  text-align:center;
-}
-
-#forcePopup h3{
-  margin-bottom:10px;
-  font-size:20px;
-}
-
-#forcePopup p{
-  font-size:14px;
-  margin-bottom:20px;
-}
-
-#forcePopup button{
-  width:100%;
-  padding:14px;
-  font-size:16px;
-  font-weight:bold;
-  background:#00c853;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
+/* FOOT */
+.footer{
+    margin-top:18px;
+    font-size:12px;
+    color:#aaa;
 }
 </style>
 </head>
 
 <body>
 
-<!-- FULL SCREEN FORCE POPUP -->
-<div id="forcePopup">
-  <div class="box">
-    <h3> Open in Browser</h3>
-    <p>
-      Tap OK To Open This Site in Chrome.<br><br>
-      Please <b>Tap/ Ok</b> To Open Website.
-    </p>
-    <button id="openBrowserBtn">OK</button>
-  </div>
+<div class="card">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="https://i.postimg.cc/rmgNyRwj/Copy-of-White-Black-Professional-Design-Football-Club-Logo-20260123-162935-0000.png" alt="Logo">
+    </div>
+
+    <!-- TITLE -->
+    <h1>Radhika Friendship Club</h1>
+
+    <!-- MAIN TEXT -->
+    <div class="main-text">
+        Do you want to love meeting with new people and want to make new friends in your city
+    </div>
+
+    <!-- INTERESTED LINE (BLACK + BOLD) -->
+    <div class="sub-text">
+         Real  people  -  verified  real  connection 
+Join the most trusted dating community in your city
+    </div>
+
+    <!-- EXTRA LINE -->
+    <div class="extra-text">
+        Contact us now through WhatsApp
+    </div>
+
+    <!-- TELEGRAM -->
+    <a href="https://t.me/+Xv29HOt5mCBiZTk9" class="btn telegram">
+        <i class="fab fa-telegram"></i>
+        Join Telegram Channel
+    </a>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/919111826728?text=Please%20send%20information" class="btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        Chat On WhatsApp
+    </a>
+
+    <!-- CALL -->
+    <a href="tel:9111826728" class="btn call">
+        <i class="fas fa-phone"></i>
+        Call Now
+    </a>
+
+    <div class="footer">
+        Radhika Friendship Club
+    </div>
+
 </div>
-
-<div class="container">
-  <br><br>
-
-  <h1>Radhika Friendship Club</h1>
-
-  <h2>
-    <span class="highlight">Meeting</span> with High-Profile
-    <span class="highlight">Madam Near You</span>
-  </h2>
-
-  <ul>
-    <li>✔ Part-Time Opportunity</li>
-    <li>✔ Trusted High-Profile Madam Network</li>
-    <li>✔ Earnings: ₹16,000 – ₹24,000 per assignment (performance based)</li>
-    <li>✔ Immediate Income Opportunity</li>
-    <li>✔ Flexible work • Attractive incentives DM to apply</li>
-    <li>✔ Chat on WhatsApp for Jo*b information</li>
-  </ul>
-
-  <a class="whatsapp-btn" href="https://wa.me/919111826728?text=Please%20send%20information">
-    💬 Chat on WhatsApp Now
-  </a>
-
-  <div class="image-section">
-    <img src="https://i.ibb.co/yx5Kq6D/14039.png" alt="Image">
-  </div>
-</div>
-
-<script>
-(function(){
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
-  const isInApp =
-    ua.includes("Instagram") ||
-    ua.includes("FBAN") ||
-    ua.includes("FBAV");
-
-  if(isInApp){
-
-    /* 🔒 BACK BUTTON BLOCK (2 lines) */
-    history.pushState(null,null,location.href);
-    window.onpopstate=function(){history.go(1);};
-
-    document.body.style.overflow="hidden";
-    const popup=document.getElementById("forcePopup");
-    popup.style.display="flex";
-
-    document.getElementById("openBrowserBtn").onclick=function(){
-      const url=window.location.href;
-
-      if(/Android/i.test(ua)){
-        window.location.href=
-          "intent://" + url.replace(/^https?:\/\//,"") +
-          "#Intent;scheme=https;package=com.android.chrome;end";
-      }
-      else if(/iPhone|iPad|iPod/i.test(ua)){
-        window.location.href=url;
-      }
-    };
-  }
-})();
-</script>
 
 </body>
 </html>
